@@ -1,8 +1,15 @@
 #!/bin/bash
 
-echo "Hello, world!"
-
-testrun=true
+echo -n "Test run (y/n/q)? : "
+read input
+if [[ "$input" =~ [Yy] ]]; then
+    testrun=true
+elif [[ "$input" =~ [Nn] ]]; then
+    testrun=false
+else
+    echo "Script exit."
+    exit
+fi
 
 # Setup for OS constant
 LOCALOS=undefined
