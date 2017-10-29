@@ -1,10 +1,12 @@
 set nocompatible
 syntax on " enable syntax highlighting
 filetype on
+filetype plugin on
 " color scheme
 set background=dark
 colorscheme solarized
 
+set backspace=2         " fixing backspace?
 set ff=unix             " to compensate windows line endings for syntax file
 set ruler               " show ruler bar
 set showcmd 	    	" show command in ruler bar
