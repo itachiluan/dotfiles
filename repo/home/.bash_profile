@@ -17,3 +17,9 @@ export PATH=$PATH:~/bin
 # Setting system language fonts
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
+
+# path for CUDA
+export CUDA_HOME=/Developer/NVIDIA/CUDA-8.0
+export DYLD_LIBRARY_PATH=/usr/local/cuda/lib:$DYLD_LIBRARY_PATH
+export DYLD_LIBRARY_PATH="$DYLD_LIBRARY_PATH:$CUDA_HOME/lib"
+export PATH="$CUDA_HOME/bin:$PATH"
