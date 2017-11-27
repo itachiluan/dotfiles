@@ -1,7 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
-let g:netrw_dirhist_1='/Users/itachiluan/Documents/Git_Repo/cpp/tclap/examples'
-let g:netrw_dirhist_2='/Users/itachiluan/.vim'
-let g:netrw_dirhist_3='/Users/itachiluan/Documents/Git_Repo/bshScript/deploy'
-let g:netrw_dirhist_4='/Users/itachiluan/.vim'
-let g:netrw_dirhist_5='/Users/itachiluan/Documents/Learnings/deep_learning/01_Neural_Networks_and_Deep_Learning/homework'
