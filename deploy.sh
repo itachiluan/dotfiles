@@ -7,11 +7,11 @@ if [[ "$input" =~ [Yy] ]]; then
 elif [[ "$input" =~ [Nn] ]]; then
     testrun=false
 else
-    echo "Script exit."
+    echo "Exit script."
     exit
 fi
 
-# Setup for OS constant
+# find out OS constant
 LOCALOS=undefined
 if [[ "$OSTYPE" == "darwin"* ]]; then
     LOCALOS=MacOS
@@ -48,6 +48,17 @@ if [[ "$LOCALOS" == "MacOS" ]]; then
             cp $iTermPref_Source $iTermPref_Dest
         fi
     fi
+fi
+
+# switch control/CapsLock keys
+echo -n "Switch CapsLock with Ctrl? (y/n): "
+read input
+if [[ "$input" =~ [Yy] ]]; then
+    source $source_dir/bin/switch.sh
+    sudo defaults write com.apple.loginwindow LoginHook $source_dir/bin/switch.sh
+else
+    source $source_dir/bin/reset.sh
+    sudo defaults delete com.apple.loginwindow LoginHook
 fi
 
 # copy all the home directory dot files

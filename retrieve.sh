@@ -23,20 +23,46 @@ upperlevel() {
     echo "$ret"
 }
 
+# find out OS constant
+LOCALOS=undefined
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    LOCALOS=MacOS
+elif [[ "$OSTYPE" == "linux"* ]]; then
+    LOCALOS=Linux
+fi
+
 # the folder where the repository is
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 ownfolder=$DIR/repo
-ownhome=$ownfolder/home
 
 if [[ "$testrun" == true ]]; then
-    desthome=$DIR/test_retrieve
-    rm -Rf $desthome
-    mkdir -p $desthome
+    destfolder=$DIR/test_retrieve
+    rm -Rf $destfolder
+    mkdir -p $destfolder
 else
-    desthome=$ownhome
+    destfolder=$ownfolder
+fi
+
+# Copy over the iTerm preference
+if [[ "$LOCALOS" == "MacOS" ]]; then
+    iTermPref_Name=com.googlecode.iterm2.plist
+    iTermPref_Source=$HOME/Library/Preferences/$iTermPref_Name
+
+    if [[ -f "$iTermPref_Source" ]]; then
+        iTermPref_Dest=$destfolder/iterm
+        mkdir -p $iTermPref_Dest
+
+        if [[ -f "$iTermPref_Dest/$iTermPref_Name" ]]; then
+            echo "iTerm preference exists, will be over-written."
+        fi
+        cp $iTermPref_Source $iTermPref_Dest
+    fi
 fi
 
 # traversing the root home folder
+ownhome=$ownfolder/home
+desthome=$destfolder/home
+mkdir -p $desthome
 for file in $(find $ownhome -mindepth 1 -maxdepth 1 -type f | sort); do
     filename=$(basename $file)
     if [[ -f "$HOME/$filename" ]]; then
