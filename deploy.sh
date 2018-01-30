@@ -48,18 +48,18 @@ if [[ "$LOCALOS" == "MacOS" ]]; then
             cp $iTermPref_Source $iTermPref_Dest
         fi
     fi
+    # switch control/CapsLock keys
+    echo -n "Switch CapsLock with Ctrl? (y/n): "
+    read input
+    if [[ "$input" =~ [Yy] ]]; then
+        source $source_dir/bin/switch.sh
+        sudo defaults write com.apple.loginwindow LoginHook $source_dir/bin/switch.sh
+    else
+        source $source_dir/bin/reset.sh
+        sudo defaults delete com.apple.loginwindow LoginHook
+    fi
 fi
 
-# switch control/CapsLock keys
-echo -n "Switch CapsLock with Ctrl? (y/n): "
-read input
-if [[ "$input" =~ [Yy] ]]; then
-    source $source_dir/bin/switch.sh
-    sudo defaults write com.apple.loginwindow LoginHook $source_dir/bin/switch.sh
-else
-    source $source_dir/bin/reset.sh
-    sudo defaults delete com.apple.loginwindow LoginHook
-fi
 
 # copy all the home directory dot files
 for file in $( find $source_dir/home -maxdepth 1 -type f | sort ); do
