@@ -31,8 +31,9 @@ else
     dest_home=$HOME
 fi
 
-# Copy iTerm preferences
+# Setups specific for MacOS
 if [[ "$LOCALOS" == "MacOS" ]]; then
+    # copy iTerm preferences
     if [[ "$TERM_PROGRAM" == "iTerm"* ]]; then
         echo "Warning: iTerm preferences is not copied. Use Apple Terminal.app to run this script."
     else
