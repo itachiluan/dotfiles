@@ -46,7 +46,7 @@ else
     let &t_EI = "\<Esc>[2 q"
     let &t_SR = "\<Esc>[4 q"
 endif
-    
+
 set timeoutlen=1000 " fixing the cursor change lag
 set ttimeoutlen=0   " fixing the cursor change lag
 
