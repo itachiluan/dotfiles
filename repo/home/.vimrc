@@ -68,5 +68,6 @@ nnoremap ,for :read $HOME/.vim/skeletons/for.cpp<CR>=2jf(a
 nnoremap ,if :read $HOME/.vim/skeletons/if.cpp<CR>=2jf(a
 nnoremap ,while :read $HOME/.vim/skeletons/while.cpp<CR>=2jf(a
 nnoremap ,makefile :read $HOME/.vim/skeletons/Makefile<CR>kdd
+nnoremap ,lorem :read $HOME/.vim/skeletons/lorem.txt<CR>     " lorem html text
 
 let g:cpp_class_scope_highlight = 1
