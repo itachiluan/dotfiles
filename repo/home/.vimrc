@@ -68,7 +68,10 @@ nnoremap ,for :read $HOME/.vim/skeletons/for.cpp<CR>=2jf(a
 nnoremap ,if :read $HOME/.vim/skeletons/if.cpp<CR>=2jf(a
 nnoremap ,while :read $HOME/.vim/skeletons/while.cpp<CR>=2jf(a
 nnoremap ,makefile :read $HOME/.vim/skeletons/Makefile<CR>kdd
-nnoremap ,lorem :read $HOME/.vim/skeletons/lorem.txt<CR>     " lorem html text
+" lorem html sample text
+nnoremap ,lorem :read $HOME/.vim/skeletons/lorem.txt<CR>
 nnoremap ,tag <ESC><ESC>a&<ESC>bi<<ESC>Ea><ESC>F&xF<yf>f>pF<a/<ESC>F<i
+nnoremap ,html :read $HOME/.vim/skeletons/htmlstart.html<CR>kdd3jf>li
+nnoremap ,hcomm :read $HOME/.vim/skeletons/hcomment.html<CR>kdd^2f-a
 
 let g:cpp_class_scope_highlight = 1
