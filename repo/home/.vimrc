@@ -62,16 +62,17 @@ nnoremap <f5> :!ctags -R<CR>
 nnoremap <CR> o<Esc>
 
 " snippets
-nnoremap ,main :read $HOME/.vim/skeletons/main.cpp<CR>kddjdj2jA
-nnoremap ,cpptest :read $HOME/.vim/skeletons/main.cpp<CR>kdd5jA
-nnoremap ,for :read $HOME/.vim/skeletons/for.cpp<CR>=2jf(a
-nnoremap ,if :read $HOME/.vim/skeletons/if.cpp<CR>=2jf(a
-nnoremap ,while :read $HOME/.vim/skeletons/while.cpp<CR>=2jf(a
-nnoremap ,makefile :read $HOME/.vim/skeletons/Makefile<CR>kdd
-" lorem html sample text
-nnoremap ,lorem :read $HOME/.vim/skeletons/lorem.txt<CR>
+nnoremap ,main :-1read $HOME/.vim/skeletons/main.cpp<CR>2jdjjA
+nnoremap ,cpptest :-1read $HOME/.vim/skeletons/main.cpp<CR>5jA
+nnoremap ,for :-1read $HOME/.vim/skeletons/for.cpp<CR>=2jf(a
+nnoremap ,if :-1read $HOME/.vim/skeletons/if.cpp<CR>=2jf(a
+nnoremap ,while :-1read $HOME/.vim/skeletons/while.cpp<CR>=2jf(a
+nnoremap ,makefile :-1read $HOME/.vim/skeletons/Makefile<CR>
+    " lorem html sample text
+nnoremap ,lorem :-1read $HOME/.vim/skeletons/lorem.txt<CR>
 nnoremap ,tag <ESC><ESC>a&<ESC>bi<<ESC>Ea><ESC>F&xF<yf>f>pF<a/<ESC>F<i
-nnoremap ,html :read $HOME/.vim/skeletons/htmlstart.html<CR>kdd3jf>li
-nnoremap ,hcomm :read $HOME/.vim/skeletons/hcomment.html<CR>kdd^2f-a
+nnoremap ,html :-1read $HOME/.vim/skeletons/htmlstart.html<CR>3jf>li
+nnoremap ,hcomm :-1read $HOME/.vim/skeletons/hcomment.html<CR>^2f-a
+nnoremap ,csslink :-1read $HOME/.vim/skeletons/csslink.html<CR>f.i
 
 let g:cpp_class_scope_highlight = 1
