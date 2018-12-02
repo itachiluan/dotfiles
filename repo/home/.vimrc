@@ -1,7 +1,6 @@
 set nocompatible
 syntax on " enable syntax highlighting
-filetype on
-filetype plugin on
+filetype off " required by Vundle
 " color scheme
 set background=dark
 colorscheme solarized
@@ -70,9 +69,31 @@ nnoremap ,while :-1read $HOME/.vim/skeletons/while.cpp<CR>=2jf(a
 nnoremap ,makefile :-1read $HOME/.vim/skeletons/Makefile<CR>
     " lorem html sample text
 nnoremap ,lorem :-1read $HOME/.vim/skeletons/lorem.txt<CR>
-nnoremap ,tag <ESC><ESC>a&<ESC>bi<<ESC>Ea><ESC>F&xF<yf>f>pF<a/<ESC>F<i
 nnoremap ,html :-1read $HOME/.vim/skeletons/htmlstart.html<CR>3jf>li
 nnoremap ,hcomm :-1read $HOME/.vim/skeletons/hcomment.html<CR>^2f-a
 nnoremap ,csslink :-1read $HOME/.vim/skeletons/csslink.html<CR>f.i
 
 let g:cpp_class_scope_highlight = 1
+
+" ########################### Vundle Bundles #################################
+"
+" set the runtime path to include Vundle and initialize
+" Run :PluginInstall to install all
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+" For typescript syntax highlighting
+Plugin 'leafgarland/typescript-vim'
+Plugin 'Quramy/tsuquyomi'
+Plugin 'scrooloose/nerdtree'
+Plugin 'mattn/emmet-vim'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
