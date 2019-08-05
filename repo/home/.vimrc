@@ -89,8 +89,10 @@ Plugin 'VundleVim/Vundle.vim'
 " For typescript syntax highlighting
 Plugin 'leafgarland/typescript-vim'
 Plugin 'Quramy/tsuquyomi'
+let g:tsuquyomi_completion_detail = 1
 Plugin 'scrooloose/nerdtree'
 Plugin 'mattn/emmet-vim'
+let g:user_emmet_leader_key='<C-z>'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
