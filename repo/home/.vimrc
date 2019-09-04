@@ -56,7 +56,7 @@ nnoremap <silent> [B :bfirst<CR>
 nnoremap <silent> ]B :blast<CR>
 
 " remap keys for ctags
-nnoremap <f5> :!ctags -R<CR>
+nnoremap <F5> :!ctags -R<CR>
 
 nnoremap <CR> o<Esc>
 
@@ -76,7 +76,7 @@ nnoremap ,csslink :-1read $HOME/.vim/skeletons/csslink.html<CR>f.i
 let g:cpp_class_scope_highlight = 1
 
 " ########################### Vundle Bundles #################################
-"
+
 " set the runtime path to include Vundle and initialize
 " Run :PluginInstall to install all
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -89,8 +89,12 @@ Plugin 'VundleVim/Vundle.vim'
 " For typescript syntax highlighting
 Plugin 'leafgarland/typescript-vim'
 Plugin 'Quramy/tsuquyomi'
+let g:tsuquyomi_completion_detail = 1
+autocmd FileType typescript setlocal completeopt-=preview
 Plugin 'scrooloose/nerdtree'
+Plugin 'moll/vim-node'
 Plugin 'mattn/emmet-vim'
+let g:user_emmet_leader_key='<C-Z>'   "leader key for emmet
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
